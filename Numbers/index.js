@@ -3,9 +3,6 @@ let num2 = 0.1;
 
 
 
-
-
-
 // console.log(num1.toString() + num2);
 // console.log(typeof num1)
 // num1 = num1.toString(); converte para str 
