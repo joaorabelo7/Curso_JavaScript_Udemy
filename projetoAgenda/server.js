@@ -63,8 +63,8 @@ app.set('view engine', 'ejs');
 app.use(csrf());
 
 // Meus middlewares
-app.use(middlewareGlobal);
 app.use(checkCsrfError);
+app.use(middlewareGlobal);
 app.use(csrfMidlleware);
 app.use(routes);
 
