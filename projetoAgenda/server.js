@@ -29,7 +29,17 @@ const {
 } = require('./src/middlewares/middleware');
 
 // Helmet
-app.use(helmet());
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      styleSrc: ["'self'", "https://cdn.jsdelivr.net", "'unsafe-inline'"],
+      scriptSrc: ["'self'", "https://cdn.jsdelivr.net"],
+      fontSrc: ["'self'", "https://cdn.jsdelivr.net"]
+    }
+  })
+);
+
 
 // Body parser
 app.use(express.urlencoded({ extended: true }));
